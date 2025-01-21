@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - "docker/train/**"
+      - "src/**"
   workflow_dispatch:
 
 permissions:
