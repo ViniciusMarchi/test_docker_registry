@@ -43,6 +43,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: docker/data-preparation/Dockerfile
+          file: docker/data_preparation/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
