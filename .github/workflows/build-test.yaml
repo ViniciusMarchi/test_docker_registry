@@ -41,7 +41,7 @@ jobs:
       - name: Build & Push Train Image
         uses: docker/build-push-action@v4
         with:
-          context: docker/train
+          context: .
           file: docker/train/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
