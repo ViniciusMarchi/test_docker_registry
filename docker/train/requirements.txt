@@ -1,0 +1,8 @@
+matplotlib
+seaborn
+numpy
+pandas
+scikit-learn
+imbalanced-learn
+mlflow
+minio

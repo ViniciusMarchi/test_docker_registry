@@ -1,11 +1,11 @@
-name: Build & Push Train
+name: Build & Push Custom Airflow
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - "docker/train/**"
-      - "src/**"
+      - "docker/airflow/**"
+      - "dags/**"
   workflow_dispatch:
 
 permissions:
@@ -35,14 +35,14 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/${{ github.repository_owner }}/train
+          images: ghcr.io/${{ github.repository_owner }}/custom-airflow
           tags: |
             type=raw,value=latest
 
-      - name: Build & Push Train Image
+      - name: Build & Push Custom Airflow Image
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: docker/train/Dockerfile
+          file: docker/airflow/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
